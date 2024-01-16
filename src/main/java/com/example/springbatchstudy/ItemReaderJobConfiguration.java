@@ -8,7 +8,6 @@ import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.database.JpaPagingItemReader;
 import org.springframework.batch.item.database.builder.JpaCursorItemReaderBuilder;
 import org.springframework.batch.item.database.builder.JpaPagingItemReaderBuilder;
 import org.springframework.batch.item.file.FlatFileItemReader;
@@ -22,11 +21,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.transaction.PlatformTransactionManager;
 
-@Configuration
+//@Configuration
 public class ItemReaderJobConfiguration {
 
     @Bean
-    public Job job(JobRepository jobRepository, Step step){
+    public Job job(
+            JobRepository jobRepository,
+            Step step
+    ) {
         return new JobBuilder("itemReaderJob", jobRepository)
                 .incrementer(new RunIdIncrementer())
                 .start(step)

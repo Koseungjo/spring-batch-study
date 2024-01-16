@@ -25,3 +25,6 @@
 
 # Chunk-oriented Processing 구조
 ![img_1.png](img_1.png)
+
+# Chunk 아키텍쳐
+![img_2.png](img_2.png)
