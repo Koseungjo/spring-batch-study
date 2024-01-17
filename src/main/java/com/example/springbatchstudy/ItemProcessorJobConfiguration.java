@@ -50,7 +50,7 @@ public class ItemProcessorJobConfiguration {
                 .build();
     }
 
-    private static ItemProcessor<User, String> customProcessor() {
+    private ItemProcessor<User, String> customProcessor() {
         return user -> {
             if (user.getName().equals("승조1")) return null;
 
@@ -60,21 +60,21 @@ public class ItemProcessorJobConfiguration {
         };
     }
 
-    private static ItemProcessor<User, User> processor1() {
+    private ItemProcessor<User, User> processor1() {
         return user -> {
             user.setName(user.getName() + user.getName());
             return user;
         };
     }
 
-    private static ItemProcessor<User, User> processor2() {
+    private ItemProcessor<User, User> processor2() {
         return user -> {
             user.setAge(user.getAge() + user.getAge());
             return user;
         };
     }
 
-    private static ItemProcessor<User, User> processor3() {
+    private ItemProcessor<User, User> processor3() {
         return user -> {
             user.setRegion(user.getRegion() + user.getRegion());
             return user;
